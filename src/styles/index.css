@@ -1,0 +1,390 @@
+@import 'tailwindcss';
+@import './tokens.css';
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --color-itec-white: var(--itec-white);
+  --color-itec-surface: var(--itec-surface);
+  --color-itec-dark: var(--itec-dark-blue);
+  --color-itec-orange: var(--itec-orange);
+  --color-itec-green: var(--itec-green);
+  --color-itec-blue: var(--itec-blue);
+  --color-itec-fucsia: var(--itec-fucsia);
+  --color-itec-muted: var(--itec-text-muted);
+  --color-itec-line: var(--itec-line);
+  --color-itec-dark-40: var(--itec-dark-blue-40);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    margin: 0;
+    background: var(--itec-white);
+    color: var(--itec-text);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.12;
+    color: var(--itec-dark-blue);
+  }
+  h1,
+  h2 {
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  :focus-visible {
+    outline: 3px solid var(--itec-blue);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  button {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--itec-orange-40);
+    color: var(--itec-dark-blue);
+  }
+}
+
+@layer components {
+  .wrap {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .wrap {
+      padding-inline: 2rem;
+    }
+  }
+
+  .section {
+    position: relative;
+    padding-block: 5rem;
+    overflow: clip;
+  }
+  @media (min-width: 1024px) {
+    .section {
+      padding-block: 6.5rem;
+    }
+  }
+  .presenting .section {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+  .presenting .section {
+    padding-bottom: 6.5rem;
+  }
+  html.presenting {
+    scroll-snap-type: y proximity;
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent, var(--itec-blue));
+  }
+  .h-section {
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+  }
+  .lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--itec-text-muted);
+    max-width: 44rem;
+  }
+
+  /* Tarjetas y botones */
+  .card {
+    background: var(--itec-white);
+    border: 1px solid var(--itec-line);
+    border-radius: 1.25rem;
+  }
+  .card-interactive {
+    transition:
+      translate 0.3s var(--ease-itec),
+      box-shadow 0.3s var(--ease-itec),
+      border-color 0.3s var(--ease-itec);
+  }
+  .card-interactive:hover {
+    border-color: var(--accent, var(--itec-dark-blue));
+    box-shadow: 0 18px 40px -22px color-mix(in srgb, var(--accent, var(--itec-dark-blue)) 55%, transparent);
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 0 -4px;
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.25rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    border: 2px solid var(--itec-dark-blue);
+    transition:
+      background-color 0.2s,
+      color 0.2s,
+      border-color 0.2s;
+  }
+  .btn-primary {
+    background: var(--itec-dark-blue);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background: var(--itec-blue);
+    border-color: var(--itec-blue);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--itec-dark-blue);
+  }
+  .btn-ghost:hover {
+    background: var(--itec-dark-blue);
+    color: #fff;
+  }
+  .btn-light {
+    background: #fff;
+    color: var(--itec-dark-blue);
+    border-color: #fff;
+  }
+  .btn-light:hover {
+    background: transparent;
+    color: #fff;
+  }
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border-color: rgb(255 255 255 / 0.55);
+  }
+  .btn-outline-light:hover {
+    background: #fff;
+    color: var(--itec-dark-blue);
+    border-color: #fff;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: color-mix(in srgb, var(--accent, var(--itec-dark-blue)) 12%, white);
+    color: var(--accent-ink, var(--accent, var(--itec-dark-blue)));
+  }
+
+  /* Tintes y tramas de la marca */
+  .tint-10 {
+    background: color-mix(in srgb, var(--accent) 10%, white);
+  }
+  .tint-6 {
+    background: color-mix(in srgb, var(--accent) 6%, white);
+  }
+  .dots {
+    background-image: radial-gradient(color-mix(in srgb, var(--accent) 38%, transparent) 1.4px, transparent 1.6px);
+    background-size: 14px 14px;
+  }
+
+  /* Pestañas con color de acento propio (el estado lo da aria-selected) */
+  .career-tab {
+    background: #fff;
+    border-color: var(--accent);
+    color: var(--accent);
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      translate 0.3s var(--ease-itec);
+  }
+  .career-tab:hover {
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 0 -2px;
+    }
+  }
+  .career-tab[aria-selected='true'] {
+    background: var(--accent);
+    color: #fff;
+  }
+  .gov-tab {
+    background: #fff;
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .gov-tab[aria-selected='true'] {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* Cierre institucional */
+  .closing a:not(.btn) {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Drawer (slide-over) sobre <dialog> nativo */
+  dialog.drawer {
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: 0;
+    height: 100dvh;
+    max-height: none;
+    width: min(37rem, 100vw);
+    max-width: 100vw;
+    background: #fff;
+    color: var(--itec-text);
+    box-shadow: -30px 0 60px -30px rgb(12 35 64 / 0.45);
+    translate: 100% 0;
+    transition:
+      translate 0.38s var(--ease-itec),
+      overlay 0.38s allow-discrete,
+      display 0.38s allow-discrete;
+  }
+  dialog.drawer[open] {
+    translate: 0 0;
+  }
+  @starting-style {
+    dialog.drawer[open] {
+      translate: 100% 0;
+    }
+  }
+  dialog.drawer::backdrop {
+    background: rgb(12 35 64 / 0);
+    transition:
+      background-color 0.38s,
+      overlay 0.38s allow-discrete,
+      display 0.38s allow-discrete;
+  }
+  dialog.drawer[open]::backdrop {
+    background: rgb(12 35 64 / 0.5);
+  }
+  @starting-style {
+    dialog.drawer[open]::backdrop {
+      background: rgb(12 35 64 / 0);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    dialog.drawer {
+      translate: 0 0;
+      opacity: 0;
+      transition:
+        opacity 0.2s,
+        overlay 0.2s allow-discrete,
+        display 0.2s allow-discrete;
+    }
+    dialog.drawer[open] {
+      opacity: 1;
+    }
+    @starting-style {
+      dialog.drawer[open] {
+        translate: 0 0;
+        opacity: 0;
+      }
+    }
+  }
+  /* Sin scroll del fondo bajo el modal (sin tocar html/body) */
+  dialog:modal {
+    overscroll-behavior: contain;
+  }
+  dialog::backdrop {
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+
+  /* Línea de pulso del diagrama digital */
+  .flow-dash {
+    stroke-dasharray: 6 8;
+    @media (prefers-reduced-motion: no-preference) {
+      animation: flow-dash 1.4s linear infinite;
+    }
+  }
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+/* Exportar síntesis PDF (window.print) */
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  html,
+  body {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  html {
+    scroll-snap-type: none !important;
+  }
+  .no-print,
+  dialog.drawer,
+  header[data-site-nav],
+  nav[data-progress] {
+    display: none !important;
+  }
+  .print-only {
+    display: block;
+  }
+  .section {
+    padding-block: 1.2rem !important;
+    min-height: 0 !important;
+    break-inside: auto;
+    overflow: visible;
+  }
+  .card,
+  .avoid-break {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+  [data-bg-geometry] {
+    display: none !important;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .closing {
+    break-inside: avoid;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

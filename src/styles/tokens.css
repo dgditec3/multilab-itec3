@@ -1,0 +1,54 @@
+/* Tokens oficiales — Manual de Normas ITEC 3 · 2023 */
+:root {
+  /* Paleta corporativa */
+  --itec-white: #ffffff;
+  --itec-surface: #f7f9fc;
+  --itec-dark-blue: #0c2340; /* PMS 289 */
+  --itec-orange: #fe5000; /* PMS 021 */
+  --itec-green: #009a17; /* PMS 2272 */
+  --itec-blue: #1d4f91; /* PMS 7686 */
+  --itec-fucsia: #ce1482; /* PMS 813 */
+
+  /* Paleta secundaria (Manual p. 21): 70 / 60 / 50 / 40 % y tinte 10 % */
+  --itec-dark-blue-70: color-mix(in srgb, var(--itec-dark-blue) 70%, white);
+  --itec-dark-blue-60: color-mix(in srgb, var(--itec-dark-blue) 60%, white);
+  --itec-dark-blue-50: color-mix(in srgb, var(--itec-dark-blue) 50%, white);
+  --itec-dark-blue-40: color-mix(in srgb, var(--itec-dark-blue) 40%, white);
+  --itec-dark-blue-10: color-mix(in srgb, var(--itec-dark-blue) 10%, white);
+
+  --itec-orange-70: color-mix(in srgb, var(--itec-orange) 70%, white);
+  --itec-orange-60: color-mix(in srgb, var(--itec-orange) 60%, white);
+  --itec-orange-50: color-mix(in srgb, var(--itec-orange) 50%, white);
+  --itec-orange-40: color-mix(in srgb, var(--itec-orange) 40%, white);
+  --itec-orange-10: color-mix(in srgb, var(--itec-orange) 10%, white);
+
+  --itec-green-70: color-mix(in srgb, var(--itec-green) 70%, white);
+  --itec-green-60: color-mix(in srgb, var(--itec-green) 60%, white);
+  --itec-green-50: color-mix(in srgb, var(--itec-green) 50%, white);
+  --itec-green-40: color-mix(in srgb, var(--itec-green) 40%, white);
+  --itec-green-10: color-mix(in srgb, var(--itec-green) 10%, white);
+
+  --itec-blue-70: color-mix(in srgb, var(--itec-blue) 70%, white);
+  --itec-blue-60: color-mix(in srgb, var(--itec-blue) 60%, white);
+  --itec-blue-50: color-mix(in srgb, var(--itec-blue) 50%, white);
+  --itec-blue-40: color-mix(in srgb, var(--itec-blue) 40%, white);
+  --itec-blue-10: color-mix(in srgb, var(--itec-blue) 10%, white);
+
+  --itec-fucsia-70: color-mix(in srgb, var(--itec-fucsia) 70%, white);
+  --itec-fucsia-60: color-mix(in srgb, var(--itec-fucsia) 60%, white);
+  --itec-fucsia-50: color-mix(in srgb, var(--itec-fucsia) 50%, white);
+  --itec-fucsia-40: color-mix(in srgb, var(--itec-fucsia) 40%, white);
+  --itec-fucsia-10: color-mix(in srgb, var(--itec-fucsia) 10%, white);
+
+  /* Texto */
+  --itec-text: var(--itec-dark-blue);
+  --itec-text-muted: #4a5a70; /* contraste AA sobre blanco y superficie */
+  --itec-line: #dde4ee;
+
+  /* Tipografía oficial */
+  --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: Arial, 'Helvetica Neue', sans-serif;
+
+  /* Código de animación (escala · rotación · traslación) */
+  --ease-itec: cubic-bezier(0.22, 0.8, 0.24, 1);
+}
