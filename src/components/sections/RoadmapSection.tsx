@@ -50,7 +50,7 @@ export function RoadmapSection() {
         <SectionHeader
           eyebrow="Hoja de ruta 2026 – 2027"
           title={<span id="ruta-title">Cinco hitos, de diciembre de 2026 a diciembre de 2027.</span>}
-          lead="Tocá cada fase para ver entregables y responsables, con foco en el 7 de agosto."
+          lead="Tocá cada fase para ver entregables y responsables, rumbo al 20° Aniversario (AGOSTO 2007 - AGOSTO 2027)."
         />
 
         <Reveal className="mt-12">
@@ -119,7 +119,7 @@ export function RoadmapSection() {
         <div className="wrap relative py-16 md:py-24">
           <Reveal>
             <ItecLogo variant="negativo" className="h-12 md:h-14" />
-            <p className="eyebrow mt-10 !text-white/70">20° Aniversario · 2007 – 2027</p>
+            <p className="eyebrow mt-10 !text-white/70">20° Aniversario · AGOSTO 2007 - AGOSTO 2027</p>
             <h2 className="mt-3 max-w-4xl text-[clamp(1.9rem,4.6vw,3.4rem)] !text-white">{brand.concept}</h2>
             <p className="mt-6 max-w-2xl text-lg text-white/80">
               Veinte años formando técnicos superiores. El próximo capítulo lo escribimos juntos, con las cinco tecnicaturas en un mismo laboratorio.

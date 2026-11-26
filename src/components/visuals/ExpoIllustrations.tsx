@@ -118,7 +118,7 @@ export function ExpoHeroIllustration() {
         fontSize="12.5"
         letterSpacing="1.4"
       >
-        7 DE AGOSTO DE 2027 · EDICIÓN ANIVERSARIO
+        AGOSTO 2007 - AGOSTO 2027 · EDICIÓN ANIVERSARIO
       </text>
       <text
         x="280"

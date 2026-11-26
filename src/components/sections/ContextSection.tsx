@@ -89,7 +89,7 @@ export function ContextSection() {
       title: 'Cinco factores que convergen',
       accent: 'var(--itec-orange)',
       body: (
-        <DrawerBlock title="Contexto y oportunidad institucional (2007 – 2027)">
+        <DrawerBlock title="Contexto y oportunidad institucional (AGOSTO 2007 - AGOSTO 2027)">
           <ol className="space-y-5">
             {factoresOportunidad.map((f, i) => (
               <li key={f.title} className="flex gap-4">

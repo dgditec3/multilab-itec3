@@ -108,8 +108,8 @@ export const careerById = (id: CareerId): Career => careers.find((c) => c.id ===
 
 export const brand = {
   name: 'MULTILAB ITEC 3',
-  badge: 'PROPUESTA INSTITUCIONAL · 20° ANIVERSARIO (2007–2027)',
-  anniversaryMilestone: 'Camino al 20° Aniversario · 7 de agosto de 2027',
+  badge: 'PROPUESTA INSTITUCIONAL · 20° ANIVERSARIO (AGOSTO 2007 - AGOSTO 2027)',
+  anniversaryMilestone: 'Camino al 20° Aniversario · AGOSTO 2007 - AGOSTO 2027',
   headline: 'Cinco tecnicaturas. Un laboratorio vivo.',
   subheadline:
     'Un centro que abraza a las cinco tecnicaturas, potencia a docentes y estudiantes con prácticas reales y culmina en la muestra pública EXPO ITEC 2027.',
@@ -130,7 +130,7 @@ export const fichaTecnica: { label: string; value: string }[] = [
   { label: 'Elevación del borrador', value: 'Hasta el 10 de diciembre de 2026.' },
   {
     label: 'Implementación',
-    value: 'Ciclo Lectivo 2027 · camino al 20° Aniversario (agosto 2007 – agosto 2027).',
+    value: 'Ciclo Lectivo 2027 · camino al 20° Aniversario (AGOSTO 2007 - AGOSTO 2027).',
   },
   {
     label: 'Entorno digital',
@@ -173,7 +173,7 @@ export const momentCards: MomentCard[] = [
   {
     figure: '20',
     label: 'Años',
-    line: 'De 2007 a 2027: dos décadas formando técnicos superiores en Posadas, Garupá y Candelaria.',
+    line: 'AGOSTO 2007 - AGOSTO 2027: dos décadas formando técnicos superiores en Posadas, Garupá y Candelaria.',
     accent: 'var(--itec-dark-blue)',
     kind: 'years',
   },
@@ -369,7 +369,7 @@ export interface ExpoCard {
 
 export const expo2027 = {
   badge: 'PROPUESTA DEL EQUIPO DE COMUNICACIÓN · SUJETA A APROBACIÓN DEL RECTORADO',
-  milestone: '7 DE AGOSTO DE 2027 · 20 AÑOS DEL ITEC 3',
+  milestone: 'AGOSTO 2007 - AGOSTO 2027 · 20 AÑOS DEL ITEC 3',
   title: 'EXPO ITEC 2027 — Edición Aniversario',
   lead: 'Dos días de muestras de proyectos, intervenciones creativas y clases abiertas en vivo para visibilizar el talento de las cinco tecnicaturas ante toda la comunidad.',
   governanceNote:
@@ -392,7 +392,7 @@ export const expo2027 = {
         },
         {
           heading: 'Proyección territorial',
-          text: 'Proyectar la identidad y calidad formativa del ITEC 3 fuera de sus aulas en la semana conmemorativa del 7 de agosto (20° aniversario institucional).',
+          text: 'Proyectar la identidad y calidad formativa del ITEC 3 fuera de sus aulas en el mes conmemorativo del 20° aniversario institucional (AGOSTO 2007 - AGOSTO 2027).',
         },
       ],
     },
@@ -687,10 +687,10 @@ export const roadmap: Phase[] = [
   {
     n: 4,
     when: 'Agosto 2027',
-    short: '7 ago · 20° Aniversario',
+    short: 'AGOSTO 2007 - AGOSTO 2027',
     title: 'EXPO ITEC 2027 · Edición Aniversario',
     summary:
-      'Hito 7 de agosto — 20° Aniversario: realización de EXPO ITEC 2027 (2 días de muestra, intervenciones y clases abiertas en vivo).',
+      'Hito AGOSTO 2007 - AGOSTO 2027 — 20° Aniversario: realización de EXPO ITEC 2027 (2 días de muestra, intervenciones y clases abiertas en vivo).',
     deliverables: [
       '2 jornadas abiertas de muestra anual de proyectos de las cinco tecnicaturas',
       'Intervenciones creativas y transmisiones en vivo desde la sede',
