@@ -27,11 +27,25 @@ jobs:
           npm run build
 
       - name: Publicar compilado en rama deploy
+        env:
+          REMOTE_URL: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
         run: |
-          cd dist
-          git init -b deploy
+          rm -rf /tmp/deploy-repo
+          if git ls-remote --exit-code --heads "$REMOTE_URL" deploy >/dev/null 2>&1; then
+            git clone --branch deploy --single-branch --depth 1 "$REMOTE_URL" /tmp/deploy-repo
+            find /tmp/deploy-repo -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+          else
+            git init -b deploy /tmp/deploy-repo
+            git -C /tmp/deploy-repo remote add origin "$REMOTE_URL"
+          fi
+          cp -a dist/. /tmp/deploy-repo/
+          cd /tmp/deploy-repo
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "build: compilado automático desde ${{ github.sha }}"
-          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" deploy
+          if git diff --cached --quiet; then
+            echo "Sin cambios en el compilado; no se crea nuevo commit."
+          else
+            git commit -m "build: compilado automático desde ${{ github.sha }}"
+            git push origin deploy
+          fi
